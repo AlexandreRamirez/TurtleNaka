@@ -1,0 +1,16 @@
+canvas {
+    border: 5px solid yellow;
+    background-color: yellow;
+}
+#image
+{
+	display: none;
+}
+#salade
+{
+	display: none;
+}
+#screamer
+{
+	display: none;
+}
