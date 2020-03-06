@@ -1,6 +1,6 @@
 canvas {
-    border: 5px solid yellow;
-    background-color: yellow;
+   /* border: 3px solid red;*/
+	background-color: red;
 }
 #image
 {
@@ -14,3 +14,100 @@ canvas {
 {
 	display: none;
 }
+
+header{
+	margin: 0px;
+	padding: 0px;
+	background-image: url(Image/Nakamarc.jpg);
+	background-size: 8%;
+}
+#tete
+{
+	display: flex;
+	flex-direction: row;
+	align-self: center;
+	justify-content: space-around ;
+	}
+
+#tete h1{
+	padding: 0px;
+	margin: auto 0px;
+}
+
+html, body {
+
+	height: 100%;
+	margin: 0;
+  }
+
+  body {
+	font-family: 'Open Sans', sans-serif;
+	overflow: hidden;
+	margin-left: 0;
+  }
+
+  h1 {
+	font-weight: normal;
+	font-size: 2.8rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+
+  .execute
+  {position: relative;
+	left: 34%;
+	background-color: #C90205; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	
+	border-radius: 5px;
+  }
+
+a, a:visited
+{
+	color: white;
+	text-decoration: none;
+}
+
+  #next
+  {position: relative;
+	left: 34%;
+	background-color: rgb(6, 6, 7); /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	
+	border-radius: 5px;
+  }
+
+  .boutons
+  {
+	  display: flex;
+	justify-content: space-around;  
+}
+
+  #blocTurtle{
+	display: flex;
+	justify-content: center;
+  }
+
+  #myDrawing{
+	  /* margin: 20px; */
+  }
+
+  #consigne{
+text-align: center;
+  }
+  #blocklyArea{
+	  margin-right: 15px;
+  }

@@ -1,22 +1,7 @@
 Blockly.Blocks['avancer'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldLabelSerializable("avancer de "), "avancer_text")
-        .appendField(new Blockly.FieldDropdown([["1","avancer_une_case"], ["2","avancer_2_cases"], ["3","avancer_3_cases"]]), "avancer_cases")
-        .appendField("cases");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
-    this.setColour(255);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['orienter'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("orienter vers")
-        .appendField(new Blockly.FieldDropdown([["droite","droite"], ["gauche","gauche"], ["bas","bas"], ["haut","haut"]]), "orienter");
+        .appendField(new Blockly.FieldLabelSerializable("avancer d'une case "), "avancer");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(165);
@@ -24,3 +9,55 @@ Blockly.Blocks['orienter'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.JavaScript['avancer'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "avancer();";
+  return code;
+};
+
+Blockly.Blocks['tourner_a_droite'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("tourner à droite");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['tourner_a_droite'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "tourner_a_droite();";
+  return code;
+};
+
+Blockly.Blocks['tourner_a_gauche'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("tourner à gauche");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['tourner_a_gauche'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = "tourner_a_gauche();";
+  return code;
+};
+
+
+
+
+
+
+
+
+
+

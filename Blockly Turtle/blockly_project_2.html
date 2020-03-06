@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e4c2e6d74d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div id="tete">
+            <!-- <img class="logo"
+                src="https://media-exp1.licdn.com/dms/image/C4D0BAQGErthWu9G4fA/company-logo_200_200/0?e=2159024400&v=beta&t=yfUHDR03w-pTkk1mdrNffxrgciGI7l2vhpmy8QRCIbQ"
+                alt=""> -->
+            <h1>NakaBlocs</h1>
+        </div>
+    </header>
+    <div id=consigne>
+        <h2>Consignes</h2>
+        <p>Michel la tortue a bien mangé mais il a encore faim. <br>
+            Amenez Michel la tortue manger une autre salade. <br>
+        Utilisez la fonction "tourner" pour lui donner la bonne direction. </p>
+    </div>
+
+    <div class="boutons">
+        <div>
+            <button class="execute" type="button" value="Exécuter" onclick="runCode()"> <i
+                    class="fas fa-play"></i>Exécuter</button>
+        </div>
+        <div>
+            <button id="next" type="button" value="next">    
+                <a href="blockly_project_3.html">Niveau suivant</a>
+            </button>
+        </div>
+    </div>
+
+    <br>
+    <div id="blocTurtle">
+        <div id="blocklyArea" style="height:445px; width: 450px">
+            <div id="blocklyDiv" style="position: absolute; border: solid 3px"></div>
+        </div>
+        <canvas id="myDrawing" width="450" height="450"></canvas>
+    </div>
+
+
+    <script src="blockly_compressed.js"></script>
+    <script src="javascript_compressed.js"></script>
+    <script src="blocks_compressed.js"></script>
+    <script src="msg/js/en.js"></script>
+
+
+    <xml id="toolbox" style="display: none">
+        <block type="avancer"></block>
+        <block type="tourner_a_gauche"></block>        
+        <block type="tourner_a_droite"></block>
+    </xml>
+
+
+    <image id="salade" src='Image/salad.png'></image>
+    <script src="testmodulo.js"></script>
+    <script src="afficherTortue.js"></script>
+    <script type="text/javascript" src="turtle_2.js"></script>
+    <script type="text/javascript" src="anim.js"></script>
+    <image id="screamer" src="Image/screamer.jpg" alt=""></image>
+    <script src="keyboard.js"></script>
+    <script src="naka_blocks.js"></script>
+
+
+    <script>
+        var blocklyArea = document.getElementById('blocklyArea');
+        var blocklyDiv = document.getElementById('blocklyDiv');
+        var workspace = Blockly.inject(blocklyDiv,
+            {
+                media: '../../media/',
+                toolbox: document.getElementById('toolbox')
+            });
+        var onresize = function (e) {
+            // Compute the absolute coordinates and dimensions of blocklyArea.
+            var element = blocklyArea;
+            var x = 0;
+            var y = 0;
+            do {
+                x += element.offsetLeft;
+                y += element.offsetTop;
+                element = element.offsetParent;
+            } while (element);
+            // Position blocklyDiv over blocklyArea.
+            blocklyDiv.style.left = x + 'px';
+            blocklyDiv.style.top = y + 'px';
+            blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+            blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+            Blockly.svgResize(workspace);
+        };
+        window.addEventListener('resize', onresize, false);
+        onresize();
+        Blockly.svgResize(workspace);
+
+        function runCode() {
+            window.LoopTrap = 1000;
+            Blockly.JavaScript.INFINITE_LOOP_TRAP =
+                'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            try {
+            eval(code);
+            } 
+            catch (e) {
+            alert(e);
+            }
+        }
+
+    </script>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
